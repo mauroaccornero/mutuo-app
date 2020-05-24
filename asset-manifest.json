@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.ea8158a0.chunk.css",
-    "main.js": "/static/js/main.cff92342.chunk.js",
-    "main.js.map": "/static/js/main.cff92342.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.671eb6eb.js",
-    "runtime-main.js.map": "/static/js/runtime-main.671eb6eb.js.map",
-    "static/js/2.3105c21b.chunk.js": "/static/js/2.3105c21b.chunk.js",
-    "static/js/2.3105c21b.chunk.js.map": "/static/js/2.3105c21b.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.8dd19011cf88b043599eb7b3b554883d.js": "/precache-manifest.8dd19011cf88b043599eb7b3b554883d.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.ea8158a0.chunk.css.map": "/static/css/main.ea8158a0.chunk.css.map",
-    "static/js/2.3105c21b.chunk.js.LICENSE.txt": "/static/js/2.3105c21b.chunk.js.LICENSE.txt"
+    "main.css": "/mutuo-app/static/css/main.ea8158a0.chunk.css",
+    "main.js": "/mutuo-app/static/js/main.19ba0cfa.chunk.js",
+    "main.js.map": "/mutuo-app/static/js/main.19ba0cfa.chunk.js.map",
+    "runtime-main.js": "/mutuo-app/static/js/runtime-main.8fd77750.js",
+    "runtime-main.js.map": "/mutuo-app/static/js/runtime-main.8fd77750.js.map",
+    "static/js/2.5dce6eba.chunk.js": "/mutuo-app/static/js/2.5dce6eba.chunk.js",
+    "static/js/2.5dce6eba.chunk.js.map": "/mutuo-app/static/js/2.5dce6eba.chunk.js.map",
+    "index.html": "/mutuo-app/index.html",
+    "precache-manifest.c735a635c492407e3eadf6fb23fd2b81.js": "/mutuo-app/precache-manifest.c735a635c492407e3eadf6fb23fd2b81.js",
+    "service-worker.js": "/mutuo-app/service-worker.js",
+    "static/css/main.ea8158a0.chunk.css.map": "/mutuo-app/static/css/main.ea8158a0.chunk.css.map",
+    "static/js/2.5dce6eba.chunk.js.LICENSE.txt": "/mutuo-app/static/js/2.5dce6eba.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.671eb6eb.js",
-    "static/js/2.3105c21b.chunk.js",
+    "static/js/runtime-main.8fd77750.js",
+    "static/js/2.5dce6eba.chunk.js",
     "static/css/main.ea8158a0.chunk.css",
-    "static/js/main.cff92342.chunk.js"
+    "static/js/main.19ba0cfa.chunk.js"
   ]
 }
