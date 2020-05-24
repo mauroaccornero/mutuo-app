@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
-import moment from "moment";
 /**/
 import {Input} from "./Input";
 
