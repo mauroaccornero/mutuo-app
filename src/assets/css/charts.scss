@@ -1,0 +1,13 @@
+
+#charts-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom:20px;
+}
+.chart-container{
+    width:49%;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    background-color: #fff;
+}
+.amcharts-chart-div a {display:none !important;}

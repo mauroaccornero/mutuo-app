@@ -1,0 +1,21 @@
+@import "var";
+
+h1,h2{
+  text-align:center;
+  padding: 0;
+  margin: 0;
+  color: $white;
+}
+
+h1{
+  font-weight: 300;
+  font-size:3em;
+  color: $darkRed;
+  text-transform: uppercase;
+}
+
+h2{
+  font-weight: 900;
+  font-size:1.5em;
+  color: $darkblue;
+}
