@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/mutuo-app/static/css/main.ea8158a0.chunk.css",
+    "main.js": "/mutuo-app/static/js/main.cff92342.chunk.js",
+    "main.js.map": "/mutuo-app/static/js/main.cff92342.chunk.js.map",
+    "runtime-main.js": "/mutuo-app/static/js/runtime-main.8fd77750.js",
+    "runtime-main.js.map": "/mutuo-app/static/js/runtime-main.8fd77750.js.map",
+    "static/js/2.3105c21b.chunk.js": "/mutuo-app/static/js/2.3105c21b.chunk.js",
+    "static/js/2.3105c21b.chunk.js.map": "/mutuo-app/static/js/2.3105c21b.chunk.js.map",
+    "index.html": "/mutuo-app/index.html",
+    "precache-manifest.f9240cac9fb969e8263063c3ee9ff764.js": "/mutuo-app/precache-manifest.f9240cac9fb969e8263063c3ee9ff764.js",
+    "service-worker.js": "/mutuo-app/service-worker.js",
+    "static/css/main.ea8158a0.chunk.css.map": "/mutuo-app/static/css/main.ea8158a0.chunk.css.map",
+    "static/js/2.3105c21b.chunk.js.LICENSE.txt": "/mutuo-app/static/js/2.3105c21b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8fd77750.js",
+    "static/js/2.3105c21b.chunk.js",
+    "static/css/main.ea8158a0.chunk.css",
+    "static/js/main.cff92342.chunk.js"
+  ]
+}
