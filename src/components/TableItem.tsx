@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const TableItem = ({item}) => {
-
+export const TableItem = ({ item }) => {
     return (
         <tr key={item.date}>
             <td>{item.date}</td>
-            <td className={"hide-on-mobile"}>{item.quotaInteressi.toFixed(2)} €</td>
-            <td className={"hide-on-mobile"}>{item.quotaCapitale.toFixed(2)} €</td>
+            <td className={'hide-on-mobile'}>{item.quotaInteressi.toFixed(2)} €</td>
+            <td className={'hide-on-mobile'}>{item.quotaCapitale.toFixed(2)} €</td>
             <td>{item.rata.toFixed(2)} €</td>
             <td>{item.capitaleVersato.toFixed(2)} €</td>
             <td>{item.debitoResiduo.toFixed(2)} €</td>

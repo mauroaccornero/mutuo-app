@@ -1,76 +1,76 @@
 .box {
-  background-color: $white;
-  border-radius: $defaultBorderRadius;
-  padding: 0 $layoutBoxSpacing;
-  &.box-orange{
-    background-color: $lightRed;
-    padding: $layoutBoxSpacing;
-    color: #fff;
-  }
+    background-color: $white;
+    border-radius: $defaultBorderRadius;
+    padding: 0 $layoutBoxSpacing;
+    &.box-orange {
+        background-color: $lightRed;
+        padding: $layoutBoxSpacing;
+        color: #fff;
+    }
 }
 
 .message {
-  display: flex;
-  align-items: center;
-  justify-content: left;
+    display: flex;
+    align-items: center;
+    justify-content: left;
 }
 
 #form-estinzione {
-  margin: $layoutBoxSpacing 0;
+    margin: $layoutBoxSpacing 0;
 }
 
 #box-estinzioni {
     ul {
-      padding: $layoutBoxSpacing 0;
-      li {
-        border-bottom: 1px solid $darkRed;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: stretch;
-        background-color: $white;
-        margin-bottom: 1px;
-        span{
-          padding: $layoutBoxSpacing;
-          color: $darkblue;
-          strong{
-            color: $darkGrey;
-          }
+        padding: $layoutBoxSpacing 0;
+        li {
+            border-bottom: 1px solid $darkRed;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: stretch;
+            background-color: $white;
+            margin-bottom: 1px;
+            span {
+                padding: $layoutBoxSpacing;
+                color: $darkblue;
+                strong {
+                    color: $darkGrey;
+                }
+            }
+            &:last-child {
+                border-bottom: 0;
+            }
+            button {
+                font-weight: 900;
+                background-color: $darkblue;
+                border: 0;
+                color: $white;
+                display: flex;
+                align-items: center;
+                font-size: 0.8em;
+                cursor: pointer;
+            }
         }
-        &:last-child {
-          border-bottom: 0;
-        }
-        button {
-          font-weight: 900;
-          background-color: $darkblue;
-          border:0;
-          color: $white;
-          display: flex;
-          align-items: center;
-          font-size:0.8em;
-          cursor:pointer;
-        }
-      }
     }
     #total-estinzioni {
-      padding: $layoutBoxSpacing;
+        padding: $layoutBoxSpacing;
 
-      .total-estinzione {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 5px 0;
-        font-weight: 900;
-        font-size: 1.2em;
-        border-bottom: 1px solid $darkRed;
+        .total-estinzione {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 5px 0;
+            font-weight: 900;
+            font-size: 1.2em;
+            border-bottom: 1px solid $darkRed;
 
-        div:last-child {
-          text-align: right;
+            div:last-child {
+                text-align: right;
+            }
+
+            &:last-child {
+                border-bottom: 0;
+            }
         }
-
-        &:last-child {
-          border-bottom: 0;
-        }
-      }
     }
 }

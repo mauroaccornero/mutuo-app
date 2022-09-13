@@ -1,89 +1,86 @@
-@import "var";
+@import 'var';
 
-label{
-  display: block;
-  font-size:12px;
-  font-weight: 700;
-  margin-bottom:5px;
-  color: $white;
+label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: $white;
 }
 
-.input-container{
-  border:1px solid $darkRed;
-  border-radius:$defaultBorderRadius;
-  margin-bottom:5px;
-  overflow: hidden;
-  display:flex;
+.input-container {
+    border: 1px solid $darkRed;
+    border-radius: $defaultBorderRadius;
+    margin-bottom: 5px;
+    overflow: hidden;
+    display: flex;
 }
 
-.input-container span{
-  width:25px;
-  font-size:12px;
-  background-color: $darkblue;
-  text-align: center;
-  color: $white;
-  align-items: center;
-  display: flex;
-  justify-content: center;
+.input-container span {
+    width: 25px;
+    font-size: 12px;
+    background-color: $darkblue;
+    text-align: center;
+    color: $white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
-input,select{
-  outline:none;
-  transition: font-size 0.2s ease-in-out;
-  height:1.8em;
-  line-height:1.8em;
-  background-color: $white;
-  font-size:1.2em;
-
+input,
+select {
+    outline: none;
+    transition: font-size 0.2s ease-in-out;
+    height: 1.8em;
+    line-height: 1.8em;
+    background-color: $white;
+    font-size: 1.2em;
 }
 
-input:focus,select:focus{
-  font-size:1.3em;
+input:focus,
+select:focus {
+    font-size: 1.3em;
 }
 
-input{
-  border: 0;
-  width: calc(100% - 25px);
-  padding: 10px;
+input {
+    border: 0;
+    width: calc(100% - 25px);
+    padding: 10px;
 }
 
-select{
-  width:100%;
-  border:0;
-  border-radius:0;
-  font-family: 'Lato', sans-serif;
-  -webkit-appearance: none;
-  -webkit-border-radius: 0;
-  padding: 0 10px;
+select {
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+    font-family: 'Lato', sans-serif;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    padding: 0 10px;
 }
 
-input[type=submit]{
-  width:100%;
-  padding:5px;
-  background-color: $darkblue;
-  color: $white;
-  border:1px solid $darkblue;
-  border-radius:$defaultBorderRadius;
-  margin-top:10px;
-  cursor:pointer;
-  line-height: normal;
+input[type='submit'] {
+    width: 100%;
+    padding: 5px;
+    background-color: $darkblue;
+    color: $white;
+    border: 1px solid $darkblue;
+    border-radius: $defaultBorderRadius;
+    margin-top: 10px;
+    cursor: pointer;
+    line-height: normal;
 }
 
 ::-webkit-input-placeholder {
-  opacity:1;
-  color: $darkGrey;
+    opacity: 1;
+    color: $darkGrey;
 }
 
 :-ms-input-placeholder {
-  opacity:1;
-  color: $darkGrey;
+    opacity: 1;
+    color: $darkGrey;
 }
 
 ::placeholder {
-  opacity:1;
-  color: $darkGrey;
+    opacity: 1;
+    color: $darkGrey;
 }
-
-
-
-

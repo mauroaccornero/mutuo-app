@@ -9,4 +9,3 @@ Responsive too
 ![image](https://raw.githubusercontent.com/mauroaccornero/mutuo-app/master/screenshots/preview_responsive.png)
 
 [Live demo here](https://mauroaccornero.github.io/mutuo-app/)
-
