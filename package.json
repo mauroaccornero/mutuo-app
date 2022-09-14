@@ -12,7 +12,7 @@
         "format": "prettier --write .",
         "test": "jest",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -d build",
+        "deploy": "gh-pages -d dist",
         "audit": "npm audit --production",
         "prepare": "husky install"
     },
