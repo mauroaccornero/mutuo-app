@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 Simple mortgage React application.
 
 ![image](https://raw.githubusercontent.com/mauroaccornero/mutuo-app/master/screenshots/preview_desktop.png)

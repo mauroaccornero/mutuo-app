@@ -1,20 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-/**/
+import { useContext } from 'react';
+import { AppContext } from '../context/AppContext';
 import { TableItem } from './TableItem';
 
-export const Table = ({ items }) => {
+export const Table = () => {
+    const { items } = useContext(AppContext);
     return (
         <table>
             <thead>
                 <tr>
-                    <th>Mese</th>
-                    <th className={'hide-on-mobile'}>Quota Interessi</th>
-                    <th className={'hide-on-mobile'}>Quota Capitale</th>
-                    <th>Rata</th>
-                    <th>Capitale Versato</th>
-                    <th>Debito Residuo</th>
-                    <th>Interessi Versati</th>
+                    <th>Month</th>
+                    <th className={'hide-on-mobile'}>Interests quote</th>
+                    <th className={'hide-on-mobile'}>Capital quote</th>
+                    <th>Installment</th>
+                    <th>Paid-up capital</th>
+                    <th>Residual debt</th>
+                    <th>Paid-up interests</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,16 +22,10 @@ export const Table = ({ items }) => {
                     items.map((item, i) => <TableItem key={i} item={item} />)
                 ) : (
                     <tr className='empty-table'>
-                        <td colSpan={6}>
-                            Compila il form per visualizzare il piano di ammortamento
-                        </td>
+                        <td colSpan={6}>Fill the form to see the amortization schedule</td>
                     </tr>
                 )}
             </tbody>
         </table>
     );
-};
-
-Table.propTypes = {
-    items: PropTypes.arrayOf(PropTypes.any).isRequired,
 };

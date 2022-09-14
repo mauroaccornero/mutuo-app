@@ -1,16 +1,20 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import { IAmortizationScheduleItem } from '../common/types';
 
-export const TableItem = ({ item }) => {
+interface ITableProps {
+    item: IAmortizationScheduleItem;
+}
+
+export const TableItem = ({ item }: ITableProps) => {
     return (
         <tr key={item.date}>
             <td>{item.date}</td>
-            <td className={'hide-on-mobile'}>{item.quotaInteressi.toFixed(2)} €</td>
-            <td className={'hide-on-mobile'}>{item.quotaCapitale.toFixed(2)} €</td>
-            <td>{item.rata.toFixed(2)} €</td>
-            <td>{item.capitaleVersato.toFixed(2)} €</td>
-            <td>{item.debitoResiduo.toFixed(2)} €</td>
-            <td>{item.interessiVersati.toFixed(2)} €</td>
+            <td className={'hide-on-mobile'}>{item.interestsQuote.toFixed(2)} €</td>
+            <td className={'hide-on-mobile'}>{item.capitalQuote.toFixed(2)} €</td>
+            <td>{item.installment.toFixed(2)} €</td>
+            <td>{item.paidUpCapital.toFixed(2)} €</td>
+            <td>{item.residualDebt.toFixed(2)} €</td>
+            <td>{item.paidUpInterests.toFixed(2)} €</td>
         </tr>
     );
 };
@@ -18,12 +22,12 @@ export const TableItem = ({ item }) => {
 TableItem.propTypes = {
     item: PropTypes.shape({
         date: PropTypes.string.isRequired,
-        mese: PropTypes.number.isRequired,
-        quotaInteressi: PropTypes.number.isRequired,
-        quotaCapitale: PropTypes.number.isRequired,
-        rata: PropTypes.number.isRequired,
-        capitaleVersato: PropTypes.number.isRequired,
-        debitoResiduo: PropTypes.number.isRequired,
-        interessiVersati: PropTypes.number.isRequired,
+        month: PropTypes.number.isRequired,
+        interestsQuote: PropTypes.number.isRequired,
+        capitalQuote: PropTypes.number.isRequired,
+        installment: PropTypes.number.isRequired,
+        paidUpCapital: PropTypes.number.isRequired,
+        residualDebt: PropTypes.number.isRequired,
+        paidUpInterests: PropTypes.number.isRequired,
     }).isRequired,
 };

@@ -1,6 +1,6 @@
 {
     "homepage": "https://mauroaccornero.github.io/mutuo-app/",
-    "name": "mutuo-app",
+    "name": "mortgage-app",
     "version": "0.1.0",
     "private": true,
     "type": "module",
@@ -17,10 +17,12 @@
         "prepare": "husky install"
     },
     "dependencies": {
+        "@reduxjs/toolkit": "^1.8.5",
         "moment": "^2.29.4",
         "proptypes": "^1.1.0",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "react-redux": "^8.0.2"
     },
     "devDependencies": {
         "@babel/core": "^7.19.0",

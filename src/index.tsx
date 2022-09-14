@@ -2,7 +2,7 @@ import { createRoot } from 'react-dom/client';
 
 import App from './containers/App';
 
-const container = document.getElementById('mutuo-app');
+const container = document.getElementById('mortgage-app');
 
 const root = createRoot(container);
 

@@ -1,45 +1,34 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import { useContext } from 'react';
+import { AppContext } from '../context/AppContext';
 
-export const Box = ({ items }) => {
-    const { mese, interessiVersati, capitaleVersato } = items.slice(-1).pop();
-    const estinzioni = items.filter((i) => i.estinzione > 0);
-    const totaleEstinzioni = estinzioni.reduce((acc, item) => acc + item.estinzione, 0);
-    const totaleRisparmio = estinzioni.reduce((acc, item) => acc + item.risparmioEstinzione, 0);
+export const Box = () => {
+    const { items } = useContext(AppContext);
+    const { month, paidUpInterests, paidUpCapital } = items.slice(-1).pop();
+    const repayments = items.filter((i) => i.repayment > 0);
+    const totalRepayments = repayments.reduce((acc, item) => acc + item.repayment, 0);
+    const totalSavings = repayments.reduce((acc, item) => acc + item.repaymentSaving, 0);
     return (
         <div id='boxes-container' className='message'>
             <div>
-                Su un <strong>capitale di {capitaleVersato.toFixed(2)} €</strong> vengono applicati{' '}
-                <strong>{interessiVersati.toFixed(2)} € di interessi</strong> in{' '}
-                <strong>{mese} mesi</strong>. <br />
-                Il totale degli interessi da pagare corrisponde al{' '}
+                On a <strong>paid-up capital of {paidUpCapital.toFixed(2)} €</strong> you will pay{' '}
+                <strong>{paidUpInterests.toFixed(2)} € of interests</strong> in{' '}
+                <strong>{month} months</strong>. <br />
+                Total amount of interests is{' '}
                 <strong>
-                    {((interessiVersati / capitaleVersato) * 100).toFixed(2)}% del capitale
-                </strong>
-                .{' '}
-                {estinzioni.length === 0 ? (
-                    <>Non sono state effettuate estinzioni parziali.</>
+                    {((paidUpInterests / paidUpCapital) * 100).toFixed(2)}% of capital
+                </strong>.{' '}
+                {repayments.length === 0 ? (
+                    <>No repayments were applied.</>
                 ) : (
                     <>
-                        Con{' '}
-                        {estinzioni.length > 1
-                            ? `${estinzioni.length} estinzioni parziali`
-                            : `${estinzioni.length} estinzione parziale`}
-                        , per un totale di <strong>{totaleEstinzioni.toFixed(2)} €</strong>,{' '}
-                        <strong>
-                            vengono risparmiati {totaleRisparmio.toFixed(2)} € di interessi
-                        </strong>
-                        .{' '}
+                        With {repayments.length} repayment{repayments.length > 1 && 's'}, for a
+                        total amount of <strong>{totalRepayments.toFixed(2)} €</strong>,{' '}
+                        <strong>you can save {totalSavings.toFixed(2)} € on interests</strong>.{' '}
                     </>
                 )}
-                <br />È possibile modificare le estinzioni parziali dall&#39;apposito form in basso
-                a destra per vedere il conseguente impatto sulle rate e sugli interessi da
-                corrispondere.
+                <br />
+                Try to update your repayments to see how much you can save.
             </div>
         </div>
     );
-};
-
-Box.propTypes = {
-    items: PropTypes.arrayOf(PropTypes.any),
 };
