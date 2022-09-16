@@ -1,48 +1,34 @@
-.box {
-    background-color: $white;
-    border-radius: $defaultBorderRadius;
-    padding: 0 $layoutBoxSpacing;
-    &.box-orange {
-        background-color: $lightRed;
-        padding: $layoutBoxSpacing;
-        color: #fff;
-    }
-}
+@use 'common/var' as *;
 
-.message {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-}
-
-#form-estinzione {
-    margin: $layoutBoxSpacing 0;
-}
-
-#box-estinzioni {
+#box-repayments {
     ul {
-        padding: $layoutBoxSpacing 0;
+        padding: $layout-box-spacing 0;
+
         li {
-            border-bottom: 1px solid $darkRed;
+            border-bottom: 1px solid $dark-red;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: stretch;
             background-color: $white;
             margin-bottom: 1px;
+
             span {
-                padding: $layoutBoxSpacing;
-                color: $darkblue;
+                padding: $layout-box-spacing;
+                color: $dark-blue;
+
                 strong {
-                    color: $darkGrey;
+                    color: $dark-grey;
                 }
             }
+
             &:last-child {
                 border-bottom: 0;
             }
+
             button {
                 font-weight: 900;
-                background-color: $darkblue;
+                background-color: $dark-blue;
                 border: 0;
                 color: $white;
                 display: flex;
@@ -52,17 +38,18 @@
             }
         }
     }
-    #total-estinzioni {
-        padding: $layoutBoxSpacing;
 
-        .total-estinzione {
+    #total-repayments {
+        padding: $layout-box-spacing;
+
+        .total-repayment {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             padding: 5px 0;
             font-weight: 900;
             font-size: 1.2em;
-            border-bottom: 1px solid $darkRed;
+            border-bottom: 1px solid $dark-red;
 
             div:last-child {
                 text-align: right;

@@ -40,14 +40,15 @@ export const RepaymentForm = () => {
     return (
         <>
             {items.length > 0 && (
-                <div id='form-estinzione' className='box box-orange'>
+                <div id='form-repayment' className='box box-orange'>
                     <form onSubmit={(e) => handleSubmit(e)}>
                         <div className='input-wrapper'>
-                            <label htmlFor='input-tasso'>Amount</label>
+                            <label htmlFor='input-amount'>Amount</label>
                             <div className='input-container'>
                                 <Input
                                     placeholder='Insert a repayment amount'
                                     name='amount'
+                                    id={'input-amount'}
                                     data-testid={'amount-input'}
                                     onChange={(e) => handleChange(e)}
                                     value={repayment.amount}
@@ -57,10 +58,11 @@ export const RepaymentForm = () => {
                             </div>
                         </div>
                         <div className='input-wrapper'>
-                            <label htmlFor='input-inizio'>Month</label>
+                            <label htmlFor='input-month'>Month</label>
                             <select
                                 required
                                 name='month'
+                                id={'input-month'}
                                 data-testid={'month-input'}
                                 onChange={(e) => handleChange(e)}
                                 value={repayment.month}
@@ -83,6 +85,7 @@ export const RepaymentForm = () => {
 
                         <div className='input-wrapper'>
                             <input
+                                role={'button'}
                                 type='submit'
                                 data-testid={'submit-repayment-input'}
                                 value={`${isUpdate ? 'Update' : 'Add'} repayment`}

@@ -1,4 +1,4 @@
-@import 'var';
+@use 'var' as *;
 
 table {
     width: 100%;
@@ -13,29 +13,33 @@ th {
     border-width: 0;
     padding: 10px 0;
     font-size: 15px;
-    background-color: $lightRed;
-    border-bottom: 1px solid $lightGrey;
+    background-color: $light-red;
+    border-bottom: 1px solid $light-grey;
     color: $white;
 }
 
 td {
     border-color: #e1e1e1;
-    border-width: 0 1px 0 1px;
+    border-width: 0 1px;
     border-style: solid;
     border-collapse: collapse;
     padding: 5px 0;
-    color: $darkGrey;
+    color: $dark-grey;
 }
+
 td:first-child {
     border-left: 0;
 }
+
 td:last-child {
     border-right: 0;
 }
+
 tr:nth-child(even) {
-    background: $lightGrey;
+    background: $light-grey;
     color: $white;
 }
+
 tr:nth-child(odd) {
     background: $white;
 }

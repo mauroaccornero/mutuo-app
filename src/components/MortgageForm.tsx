@@ -14,13 +14,14 @@ export const MortgageForm = () => {
             <form>
                 <div className='input-wrapper'>
                     {/* TODO: SOME TOOLTIP*/}
-                    <label htmlFor='input-capitale'>Capital</label>
+                    <label htmlFor='input-capital'>Capital</label>
                     <div className='input-container'>
                         <Input
                             placeholder='Insert your mortgage capital'
                             name='capital'
                             data-testid={'capital-input'}
                             value={capital}
+                            id={'input-capital'}
                             onChange={(e) => handleChange(e)}
                             required
                         />
@@ -28,12 +29,13 @@ export const MortgageForm = () => {
                     </div>
                 </div>
                 <div className='input-wrapper'>
-                    <label htmlFor='input-tasso'>Interest rate</label>
+                    <label htmlFor='input-interest-rate'>Interest rate</label>
                     <div className='input-container'>
                         <Input
                             placeholder='Insert your mortgage interest rate'
                             name='interestRate'
-                            data-testid={'interestRate-input'}
+                            data-testid={'interest-rate-input'}
+                            id={'input-interest-rate'}
                             value={interestRate}
                             onChange={(e) => handleChange(e)}
                             required
@@ -42,12 +44,13 @@ export const MortgageForm = () => {
                     </div>
                 </div>
                 <div className='input-wrapper'>
-                    <label htmlFor='input-durata'>Duration</label>
+                    <label htmlFor='input-duration'>Duration</label>
                     <div className='input-container'>
                         <select
                             required
                             data-testid={'duration-select'}
                             name='duration'
+                            id={'input-duration'}
                             onChange={(e) => handleChange(e)}
                             value={duration}
                         >
@@ -65,13 +68,14 @@ export const MortgageForm = () => {
                     </div>
                 </div>
                 <div className='input-wrapper'>
-                    <label htmlFor='input-inizio'>Start date</label>
+                    <label htmlFor='input-start-date'>Start date</label>
                     <div className='input-container'>
                         <select
                             name='startDate'
                             onChange={(e) => handleChange(e)}
                             value={startDate}
-                            data-testid={'startDate-select'}
+                            data-testid={'start-date-select'}
+                            id={'input-start-date'}
                             required
                         >
                             <option key={'option-month-0'} value={0}>

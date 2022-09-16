@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 
-export const Repayments = () => {
+export const RepaymentsBox = () => {
     const { items, removeRepayment } = useContext(AppContext);
     const repayments = items.filter((i) => i.repayment > 0);
     const totalRepayments = repayments.reduce((acc, item) => acc + item.repayment, 0);
@@ -9,7 +9,7 @@ export const Repayments = () => {
     return (
         <>
             {items.length > 0 && (
-                <div id='box-estinzioni' className='box box-orange'>
+                <div id='box-repayments' className='box box-orange'>
                     <ul>
                         {repayments.map((e) => {
                             return (
@@ -27,16 +27,16 @@ export const Repayments = () => {
                         })}
                     </ul>
 
-                    <div id='total-estinzioni'>
-                        <div className='total-estinzione'>
+                    <div id='total-repayments'>
+                        <div className='total-repayment'>
                             <div>Total repayments</div>
                             <div>{totalRepayments.toFixed(2)} €</div>
                         </div>
-                        <div className='total-estinzione'>
+                        <div className='total-repayment'>
                             <div>Total savings</div>
                             <div>{totalSavings.toFixed(2)} €</div>
                         </div>
-                        <div className='total-estinzione'>
+                        <div className='total-repayment'>
                             <div>Percentage</div>
                             <div>{((totalSavings / totalRepayments) * 100 || 0).toFixed(2)} %</div>
                         </div>

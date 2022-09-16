@@ -1,0 +1,16 @@
+@use 'var' as *;
+
+h1 {
+    font-weight: 300;
+    font-size: 3em;
+    color: $dark-red;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h2 {
+    font-weight: 900;
+    font-size: 1.5em;
+    color: $dark-blue;
+    text-align: center;
+}

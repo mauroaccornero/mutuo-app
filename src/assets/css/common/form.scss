@@ -1,4 +1,4 @@
-@import 'var';
+@use 'var' as *;
 
 label {
     display: block;
@@ -9,8 +9,8 @@ label {
 }
 
 .input-container {
-    border: 1px solid $darkRed;
-    border-radius: $defaultBorderRadius;
+    border: 1px solid $dark-red;
+    border-radius: $default-border-radius;
     margin-bottom: 5px;
     overflow: hidden;
     display: flex;
@@ -19,7 +19,7 @@ label {
 .input-container span {
     width: 25px;
     font-size: 12px;
-    background-color: $darkblue;
+    background-color: $dark-blue;
     text-align: center;
     color: $white;
     align-items: center;
@@ -37,11 +37,6 @@ select {
     font-size: 1.2em;
 }
 
-input:focus,
-select:focus {
-    font-size: 1.3em;
-}
-
 input {
     border: 0;
     width: calc(100% - 25px);
@@ -52,35 +47,29 @@ select {
     width: 100%;
     border: 0;
     border-radius: 0;
-    font-family: 'Lato', sans-serif;
-    -webkit-appearance: none;
-    -webkit-border-radius: 0;
+    font-family: Lato, sans-serif;
+    appearance: none;
     padding: 0 10px;
+}
+
+input:focus,
+select:focus {
+    font-size: 1.3em;
 }
 
 input[type='submit'] {
     width: 100%;
     padding: 5px;
-    background-color: $darkblue;
+    background-color: $dark-blue;
     color: $white;
-    border: 1px solid $darkblue;
-    border-radius: $defaultBorderRadius;
+    border: 1px solid $dark-blue;
+    border-radius: $default-border-radius;
     margin-top: 10px;
     cursor: pointer;
     line-height: normal;
 }
 
-::-webkit-input-placeholder {
+input::placeholder {
     opacity: 1;
-    color: $darkGrey;
-}
-
-:-ms-input-placeholder {
-    opacity: 1;
-    color: $darkGrey;
-}
-
-::placeholder {
-    opacity: 1;
-    color: $darkGrey;
+    color: $dark-grey;
 }
