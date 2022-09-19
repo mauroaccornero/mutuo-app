@@ -2,7 +2,13 @@ import PropTypes from 'prop-types';
 import React, { createContext, useEffect, useState } from 'react';
 import moment from 'moment';
 /**/
-import { IAmortizationScheduleItem, IData, IRepayment } from '../common/types';
+import {
+    IAmortizationScheduleItem,
+    IData,
+    InputOnChange,
+    IRepayment,
+    SelectOnChange,
+} from '../common/types';
 import { normalizeData } from '../utils/normalizeData';
 import { calculateAmortizationSchedule } from '../core/calculateAmortizationSchedule';
 import { setAmortizationSchedule } from '../store/amortizationScheduleSlice';
@@ -31,23 +37,36 @@ const defaultValue = {
     items: [],
 };
 
-interface IAppContextInterface {
+declare interface IAppContextInterface {
     data: IData;
     setData(data: IData): void;
-    handleChange(
-        e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>
-    ): void;
+    handleChange: InputOnChange & SelectOnChange;
     addRepayment(repayment: IRepayment): void;
     removeRepayment(month: number): void;
     items: IAmortizationScheduleItem[];
 }
 
+declare interface IMockData {
+    data: IData;
+    setData?(data: IData): void;
+    handleChange?: InputOnChange & SelectOnChange;
+    addRepayment?(repayment: IRepayment): void;
+    removeRepayment?(month: number): void;
+    items?: IAmortizationScheduleItem[];
+}
+
+type AppStoreProps = {
+    children: React.ReactElement;
+    mockData?: IMockData;
+};
+
 const AppContext = createContext<IAppContextInterface>(defaultValue);
 
-const AppStore = ({ children, mockData }) => {
-    const [data, setData] = useState(
+const AppStore = ({ children, mockData }: AppStoreProps) => {
+    const [data, setData] = useState<IData>(
         mockData ? { ...defaultValue.data, ...mockData.data } : defaultValue.data
     );
+
     const items = useAppSelector((state) => state.amortizationSchedule.value);
     const dispatch = useAppDispatch();
 

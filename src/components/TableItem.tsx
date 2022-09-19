@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import { IAmortizationScheduleItem } from '../common/types';
 
-interface ITableProps {
+type TableItemProps = {
     item: IAmortizationScheduleItem;
-}
+};
 
-export const TableItem = ({ item }: ITableProps) => {
+export const TableItem = ({ item }: TableItemProps) => {
     return (
         <tr key={item.date}>
             <td>{item.date}</td>

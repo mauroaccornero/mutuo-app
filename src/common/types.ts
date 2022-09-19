@@ -1,10 +1,12 @@
-export interface IRepayment {
+import React from 'react';
+
+export declare interface IRepayment {
     month: string;
     amount: string;
     date: string;
 }
 
-export interface IData {
+export declare interface IData {
     capital: string;
     interestRate: string;
     duration: string;
@@ -12,13 +14,13 @@ export interface IData {
     repayments: IRepayment[];
 }
 
-export interface INormalizedRepayment {
+export declare interface INormalizedRepayment {
     amount: number;
     month: number;
     date: string;
 }
 
-export interface INormalizedData {
+export declare interface INormalizedData {
     capital: number;
     interestRate: number;
     duration: number;
@@ -26,7 +28,7 @@ export interface INormalizedData {
     repayments: INormalizedRepayment[];
 }
 
-export interface IAmortizationScheduleItem {
+export declare interface IAmortizationScheduleItem {
     month: number;
     date: string;
     installment: number;
@@ -38,3 +40,7 @@ export interface IAmortizationScheduleItem {
     repayment: number;
     repaymentSaving: number;
 }
+
+export type InputOnChange = (e: React.ChangeEvent<HTMLInputElement>) => void;
+
+export type SelectOnChange = (e: React.ChangeEvent<HTMLSelectElement>) => void;
