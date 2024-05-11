@@ -1,1 +1,2 @@
-export const convertInterestRate = (interestRate) => interestRate / 100 / 12;
+export const convertInterestRate = (interestRate: number) =>
+  interestRate / 100 / 12;

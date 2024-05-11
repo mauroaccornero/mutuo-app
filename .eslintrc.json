@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:prettier/recommended"],
+  "rules": {
+    "@next/next/no-img-element": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": true
+      }
+    ],
+    "no-var": "error",
+    "no-unused-vars": ["error", { "args": "none"}]
+  },
+  "globals": {},
+  "plugins": [
+    "prettier"
+  ],
+  "env": {
+  }
+}
+

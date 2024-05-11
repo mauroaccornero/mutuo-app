@@ -1,10 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit';
-import AmortizationScheduleReducer from './amortizationScheduleSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import AmortizationScheduleReducer from "./amortizationScheduleSlice";
 
 const store = configureStore({
-    reducer: {
-        amortizationSchedule: AmortizationScheduleReducer,
-    },
+  reducer: {
+    amortizationSchedule: AmortizationScheduleReducer,
+  },
 });
 
 export default store;

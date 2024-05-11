@@ -1,146 +1,145 @@
-import PropTypes from 'prop-types';
-import React, { createContext, useEffect, useState } from 'react';
-import moment from 'moment';
+"use client";
+
+import React, {
+  ChangeEvent,
+  createContext,
+  ReactNode,
+  useEffect,
+  useState,
+} from "react";
+import moment from "moment";
 /**/
 import {
-    IAmortizationScheduleItem,
-    IData,
-    InputOnChange,
-    IRepayment,
-    SelectOnChange,
-} from '../common/types';
-import { normalizeData } from '../utils/normalizeData';
-import { calculateAmortizationSchedule } from '../core/calculateAmortizationSchedule';
-import { setAmortizationSchedule } from '../store/amortizationScheduleSlice';
-import { useAppDispatch, useAppSelector } from '../store/hooks';
+  IAmortizationScheduleItem,
+  IData,
+  InputOnChange,
+  IRepayment,
+  SelectOnChange,
+} from "../common/types";
+import { normalizeData } from "../utils/normalizeData";
+import { calculateAmortizationSchedule } from "../core/calculateAmortizationSchedule";
+import { setAmortizationSchedule } from "../store/amortizationScheduleSlice";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+import store from "@/store/store";
+import { Provider } from "react-redux";
 
 const defaultValue = {
-    data: {
-        interestRate: '',
-        duration: '',
-        capital: '',
-        startDate: moment().format('MM/YYYY'),
-        repayments: [],
-    },
-    setData: () => {
-        /* do nothing.*/
-    },
-    handleChange: () => {
-        /* do nothing.*/
-    },
-    addRepayment: () => {
-        /* do nothing.*/
-    },
-    removeRepayment: () => {
-        /* do nothing.*/
-    },
-    items: [],
+  data: {
+    interestRate: "",
+    duration: "",
+    capital: "",
+    startDate: moment().format("MM/YYYY"),
+    repayments: [],
+  },
+  setData: () => {
+    /* do nothing.*/
+  },
+  handleChange: () => {
+    /* do nothing.*/
+  },
+  addRepayment: () => {
+    /* do nothing.*/
+  },
+  removeRepayment: () => {
+    /* do nothing.*/
+  },
+  items: [],
 };
 
 declare interface IAppContextInterface {
-    data: IData;
-    setData(data: IData): void;
-    handleChange: InputOnChange & SelectOnChange;
-    addRepayment(repayment: IRepayment): void;
-    removeRepayment(month: number): void;
-    items: IAmortizationScheduleItem[];
+  data: IData;
+  setData(data: IData): void;
+  handleChange: InputOnChange & SelectOnChange;
+  addRepayment(repayment: IRepayment): void;
+  removeRepayment(month: number): void;
+  items: IAmortizationScheduleItem[];
 }
 
 declare interface IMockData {
-    data: IData;
-    setData?(data: IData): void;
-    handleChange?: InputOnChange & SelectOnChange;
-    addRepayment?(repayment: IRepayment): void;
-    removeRepayment?(month: number): void;
-    items?: IAmortizationScheduleItem[];
+  data: IData;
+  setData?(data: IData): void;
+  handleChange?: InputOnChange & SelectOnChange;
+  addRepayment?(repayment: IRepayment): void;
+  removeRepayment?(month: number): void;
+  items?: IAmortizationScheduleItem[];
 }
 
 type AppStoreProps = {
-    children: React.ReactElement;
-    mockData?: IMockData;
+  children: ReactNode;
+  mockData?: IMockData;
 };
 
 const AppContext = createContext<IAppContextInterface>(defaultValue);
 
 const AppStore = ({ children, mockData }: AppStoreProps) => {
-    const [data, setData] = useState<IData>(
-        mockData ? { ...defaultValue.data, ...mockData.data } : defaultValue.data
-    );
+  const [data, setData] = useState<IData>(
+    mockData ? { ...defaultValue.data, ...mockData.data } : defaultValue.data,
+  );
 
-    const items = useAppSelector((state) => state.amortizationSchedule.value);
-    const dispatch = useAppDispatch();
+  const items = useAppSelector((state) => state.amortizationSchedule.value);
+  const dispatch = useAppDispatch();
 
-    useEffect(() => {
-        const normalizedData = normalizeData(data);
-        if (normalizedData) {
-            const amortizationItems = calculateAmortizationSchedule(normalizedData);
-            dispatch(setAmortizationSchedule(amortizationItems));
-        } else {
-            dispatch(setAmortizationSchedule([]));
-        }
-    }, [data]);
+  useEffect(() => {
+    const normalizedData = normalizeData(data);
+    if (normalizedData) {
+      const amortizationItems = calculateAmortizationSchedule(normalizedData);
+      dispatch(setAmortizationSchedule(amortizationItems));
+    } else {
+      dispatch(setAmortizationSchedule([]));
+    }
+  }, [data, dispatch]);
 
-    const handleChange = (e) => {
-        const { value, name, validity } = e.target;
-        if (validity.valid) {
-            setData({ ...data, [name]: value });
-        }
-    };
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
+    const { value, name, validity } = e.target;
+    if (validity.valid) {
+      setData({ ...data, [name]: value });
+    }
+  };
 
-    const addRepayment = ({ month, amount, date }) => {
-        const updatedRepayments = [...data.repayments];
-        updatedRepayments[parseInt(month)] = { amount, date, month };
-        setData({ ...data, repayments: updatedRepayments });
-    };
+  const addRepayment = ({
+    month,
+    amount,
+    date,
+  }: {
+    month: string;
+    amount: string;
+    date: string;
+  }) => {
+    const updatedRepayments = [...data.repayments];
+    updatedRepayments[parseInt(month)] = { amount, date, month };
+    setData({ ...data, repayments: updatedRepayments });
+  };
 
-    const removeRepayment = (month) => {
-        const updatedRepayments = [...data.repayments];
-        updatedRepayments.splice(month, 1);
-        setData({ ...data, repayments: updatedRepayments });
-    };
+  const removeRepayment = (month: number) => {
+    const updatedRepayments = [...data.repayments];
+    updatedRepayments.splice(month, 1);
+    setData({ ...data, repayments: updatedRepayments });
+  };
 
-    return (
-        <AppContext.Provider
-            value={{ data, setData, handleChange, addRepayment, removeRepayment, items }}
-        >
-            {children}
-        </AppContext.Provider>
-    );
+  return (
+    <AppContext.Provider
+      value={{
+        data,
+        setData,
+        handleChange,
+        addRepayment,
+        removeRepayment,
+        items,
+      }}
+    >
+      {children}
+    </AppContext.Provider>
+  );
 };
 
-AppStore.propTypes = {
-    children: PropTypes.element.isRequired,
-    mockData: PropTypes.shape({
-        data: PropTypes.shape({
-            interestRate: PropTypes.string,
-            duration: PropTypes.string,
-            capital: PropTypes.string,
-            startDate: PropTypes.string,
-            repayments: PropTypes.arrayOf(
-                PropTypes.shape({
-                    amount: PropTypes.string,
-                    date: PropTypes.string,
-                    month: PropTypes.string,
-                })
-            ),
-        }),
-        setData: PropTypes.func,
-        handleChange: PropTypes.func,
-        addRepayment: PropTypes.func,
-        removeRepayment: PropTypes.func,
-        items: PropTypes.arrayOf(
-            PropTypes.shape({
-                date: PropTypes.string,
-                month: PropTypes.number,
-                interestsQuote: PropTypes.number,
-                capitalQuote: PropTypes.number,
-                installment: PropTypes.number,
-                paidUpCapital: PropTypes.number,
-                residualDebt: PropTypes.number,
-                paidUpInterests: PropTypes.number,
-            })
-        ),
-    }),
-};
+function AppStoreWithRedux({ children }: { children: ReactNode }) {
+  return (
+    <Provider store={store}>
+      <AppStore>{children}</AppStore>
+    </Provider>
+  );
+}
 
-export { AppContext, AppStore };
+export { AppContext, AppStoreWithRedux };

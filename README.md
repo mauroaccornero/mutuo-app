@@ -1,9 +1,21 @@
-Simple mortgage React application.
+# Mortgage calculator 
 
-[Live demo here](https://mauroaccornero.github.io/mutuo-app/)
+A mortgage calculator created with Next.js
+
+[Live demo](https://mauroaccornero.github.io/mutuo-app/)
+
+Preview
 
 ![image](https://raw.githubusercontent.com/mauroaccornero/mutuo-app/main/screenshots/preview_desktop.png)
 
-Responsive too
+Responsive preview
 
 ![image](https://raw.githubusercontent.com/mauroaccornero/mutuo-app/main/screenshots/preview_responsive.png)
+
+## Stack
+
+- Next.js
+- Redux
+- Sass
+- Typescript
+- Vitest
