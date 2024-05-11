@@ -1,4 +1,6 @@
-import { convertInterestRate } from './convertInterestRate';
+import { convertInterestRate } from "./convertInterestRate";
 
-export const calculateInstallmentInterest = (capital, interestRate) =>
-    capital * convertInterestRate(interestRate);
+export const calculateInstallmentInterest = (
+  capital: number,
+  interestRate: number,
+) => capital * convertInterestRate(interestRate);
