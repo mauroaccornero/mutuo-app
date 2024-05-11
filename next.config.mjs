@@ -5,14 +5,14 @@ import { dirname } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-// const isProd = process.env.NODE_ENV === 'production'
 
 const nextConfig = {
+    reactStrictMode: true,
     sassOptions: {
         includePaths: [path.join(__dirname, 'styles')],
     },
     output: 'export',
-    //assetPrefix: isProd ? 'http://localhost:63342/mutuo-app/out/' : "",
+    basePath: "/mutuo-app",
 };
 
 export default nextConfig;

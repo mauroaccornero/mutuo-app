@@ -12,7 +12,7 @@
     "test": "vitest",
     "audit": "npm audit --omitDev",
     "precommit": "vitest run && npm run lint && npm run tsc && npm run audit",
-    "deploy": "gh-pages -d out"
+    "deploy": "gh-pages -d out --nojekyll"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.4",
