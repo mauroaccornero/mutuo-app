@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { InputOnChange } from "../common/types";
+import { InputOnChange } from "@/common/types";
 
 type InputProps = {
   required?: boolean;

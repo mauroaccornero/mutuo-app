@@ -1,4 +1,4 @@
-import { IData } from "../common/types";
+import { IData } from "@/common/types";
 
 export const normalizeData = ({
   capital,

@@ -1,7 +1,7 @@
 "use client";
 
 import { useContext } from "react";
-import { AppContext } from "../context/AppContext";
+import { AppContext } from "@/context/AppContext";
 import { TableItem } from "./TableItem";
 
 export const Table = () => {
@@ -24,7 +24,9 @@ export const Table = () => {
           items.map((item, i) => <TableItem key={i} item={item} />)
         ) : (
           <tr className="empty-table">
-            <td colSpan={6}>Fill the form to see the amortization schedule</td>
+            <td colSpan={6} data-cy="empty-form-message">
+              Fill the form to see the amortization schedule
+            </td>
           </tr>
         )}
       </tbody>

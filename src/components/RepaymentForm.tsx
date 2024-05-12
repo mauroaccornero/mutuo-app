@@ -48,7 +48,7 @@ export const RepaymentForm = () => {
       {items.length > 0 && (
         <div id="form-repayment" className="box box-orange">
           <form onSubmit={(e) => handleSubmit(e)}>
-            <div className="input-wrapper">
+            <div className="input-wrapper" data-cy="repayment-amount-field">
               <label htmlFor="input-amount">Amount</label>
               <div className="input-container">
                 <Input
@@ -63,7 +63,7 @@ export const RepaymentForm = () => {
                 <span>€</span>
               </div>
             </div>
-            <div className="input-wrapper">
+            <div className="input-wrapper" data-cy="repayment-month-field">
               <label htmlFor="input-month">Month</label>
               <select
                 required
@@ -95,6 +95,7 @@ export const RepaymentForm = () => {
                 type="submit"
                 data-testid={"submit-repayment-input"}
                 value={`${isUpdate ? "Update" : "Add"} repayment`}
+                data-cy="repayment-button"
               />
             </div>
           </form>

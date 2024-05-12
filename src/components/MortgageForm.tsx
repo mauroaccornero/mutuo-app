@@ -1,9 +1,9 @@
 "use client";
 
 import { useContext } from "react";
-import { AppContext } from "../context/AppContext";
-import { MORTGAGE_DURATIONS } from "../defines/mortgageDurations";
-import { calculateMonthsOptions } from "../utils/calculateMonthsOptions";
+import { AppContext } from "@/context/AppContext";
+import { MORTGAGE_DURATIONS } from "@/defines/mortgageDurations";
+import { calculateMonthsOptions } from "@/utils/calculateMonthsOptions";
 import { Input } from "./Input";
 
 export const MortgageForm = () => {
@@ -14,7 +14,7 @@ export const MortgageForm = () => {
   return (
     <div className="box box-orange">
       <form>
-        <div className="input-wrapper">
+        <div className="input-wrapper" data-cy="capital-field">
           {/* TODO: SOME TOOLTIP*/}
           <label htmlFor="input-capital">Capital</label>
           <div className="input-container">
@@ -30,7 +30,7 @@ export const MortgageForm = () => {
             <span>€</span>
           </div>
         </div>
-        <div className="input-wrapper">
+        <div className="input-wrapper" data-cy="interest-rate-field">
           <label htmlFor="input-interest-rate">Interest rate</label>
           <div className="input-container">
             <Input
@@ -45,7 +45,7 @@ export const MortgageForm = () => {
             <span>%</span>
           </div>
         </div>
-        <div className="input-wrapper">
+        <div className="input-wrapper" data-cy="duration-field">
           <label htmlFor="input-duration">Duration</label>
           <div className="input-container">
             <select
@@ -69,7 +69,7 @@ export const MortgageForm = () => {
             </select>
           </div>
         </div>
-        <div className="input-wrapper">
+        <div className="input-wrapper" data-cy="start-date-field">
           <label htmlFor="input-start-date">Start date</label>
           <div className="input-container">
             <select
