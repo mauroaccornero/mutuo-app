@@ -12,7 +12,7 @@ const nextConfig = {
         includePaths: [path.join(__dirname, 'styles')],
     },
     output: 'export',
-    basePath: "/mutuo-app",
+    basePath: process.env.BASE_PATH || "",
 };
 
 export default nextConfig;

@@ -1,7 +1,7 @@
 import moment from "moment";
 import { calculateInstallment } from "./calculateInstallment";
 import { calculateInstallmentInterest } from "./calculateInstallmentInterest";
-import { INormalizedData } from "../common/types";
+import { INormalizedData } from "@/common/types";
 
 export const calculateAmortizationSchedule = ({
   interestRate,

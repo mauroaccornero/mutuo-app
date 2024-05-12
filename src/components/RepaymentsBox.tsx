@@ -1,7 +1,7 @@
 "use client";
 
 import { useContext } from "react";
-import { AppContext } from "../context/AppContext";
+import { AppContext } from "@/context/AppContext";
 
 export const RepaymentsBox = () => {
   const { items, removeRepayment } = useContext(AppContext);

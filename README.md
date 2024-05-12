@@ -19,3 +19,5 @@ Responsive preview
 - Sass
 - Typescript
 - Vitest
+- Cypress
+- GitHub actions

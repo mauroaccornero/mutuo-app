@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IAmortizationScheduleItem } from "../common/types";
+import { IAmortizationScheduleItem } from "@/common/types";
 
 export const AmortizationScheduleSlice = createSlice({
   name: "AmortizationSchedule",

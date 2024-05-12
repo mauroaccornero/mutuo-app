@@ -15,11 +15,11 @@ import {
   InputOnChange,
   IRepayment,
   SelectOnChange,
-} from "../common/types";
-import { normalizeData } from "../utils/normalizeData";
-import { calculateAmortizationSchedule } from "../core/calculateAmortizationSchedule";
-import { setAmortizationSchedule } from "../store/amortizationScheduleSlice";
-import { useAppDispatch, useAppSelector } from "../store/hooks";
+} from "@/common/types";
+import { normalizeData } from "@/utils/normalizeData";
+import { calculateAmortizationSchedule } from "@/core/calculateAmortizationSchedule";
+import { setAmortizationSchedule } from "@/store/amortizationScheduleSlice";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import store from "@/store/store";
 import { Provider } from "react-redux";
 

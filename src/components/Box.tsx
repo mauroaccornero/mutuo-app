@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AppContext } from "../context/AppContext";
+import { AppContext } from "@/context/AppContext";
 
 export const Box = () => {
   const { items } = useContext(AppContext);
@@ -16,7 +16,7 @@ export const Box = () => {
       0,
     );
     return (
-      <div id="boxes-container" className="message">
+      <div id="boxes-container" className="message" data-cy="feedback-box">
         <div>
           On a <strong>paid-up capital of {paidUpCapital.toFixed(2)} €</strong>{" "}
           you will pay{" "}

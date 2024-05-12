@@ -1,7 +1,7 @@
 "use client";
 
 import { useContext } from "react";
-import { AppContext } from "../context/AppContext";
+import { AppContext } from "@/context/AppContext";
 import { Message } from "./Message";
 import { Box } from "./Box";
 

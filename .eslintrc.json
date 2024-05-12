@@ -2,7 +2,9 @@
   "extends": [
     "next/core-web-vitals",
     "eslint:recommended",
-    "plugin:prettier/recommended"],
+    "plugin:prettier/recommended",
+    "plugin:cypress/recommended"
+  ],
   "rules": {
     "@next/next/no-img-element": "off",
     "prettier/prettier": [
@@ -16,7 +18,8 @@
   },
   "globals": {},
   "plugins": [
-    "prettier"
+    "prettier",
+    "cypress"
   ],
   "env": {
   }
